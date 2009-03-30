@@ -2,11 +2,12 @@
   #user-bar
     = link_to_current_user :content_method => :login
     = "/"
-    = "Settings"
+    = link_to 'Настройки', edit_user_path
     = "/"
-    = link_to 'Log out', logout_path
+    = link_to 'Выйти', logout_path
 
 - else
   #user-bar
-    = link_to 'Log in', login_path
-    = link_to 'Sign up', signup_path
+    = link_to 'Войти', login_path
+    = "/"
+    = link_to 'Регистрация', signup_path

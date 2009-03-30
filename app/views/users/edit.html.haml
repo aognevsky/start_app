@@ -1,0 +1,25 @@
+%h1= @user.login
+
+- form_for(@user) do |f|
+  
+  %p
+    = label_tag 'name'
+    %br
+    = f.text_field :name
+  
+  %p
+    = submit_tag 'Сохранить'
+    
+%hr
+
+- form_for @user, :html => { :multipart => true} do |f|
+  
+  %p
+    = label_tag 'userpic'
+    %br
+    = f.file_field :userpic
+    
+
+  
+  %p
+    = submit_tag 'Сохранить аватар'

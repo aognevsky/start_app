@@ -1,7 +1,33 @@
 class UsersController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
-  
+
+  def index
+  end
+
+	def show
+		@user = User.find(current_user)
+		
+	end
+
+	def edit
+		@user = User.find(current_user)
+	end
+	
+  def update
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        flash[:notice] = 'Profile was successfully updated.'
+        format.html { redirect_to(edit_user_path) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+
 
   # render new.rhtml
   def new
@@ -13,7 +39,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     success = @user && @user.save
     if success && @user.errors.empty?
-            # Protects against session fixation attacks, causes request forgery
+       # Protects against session fixation attacks, causes request forgery
       # protection if visitor resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
       # reset session
