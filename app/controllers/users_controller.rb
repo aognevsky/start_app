@@ -9,22 +9,19 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@user = User.find(current_user)
+		@user = User.find(current_user.id)
 	end
 	
   def update
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        flash[:notice] = 'Profile was successfully updated.'
-        format.html { redirect_to(edit_user_path) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
-    end
+		@user = User.find(params[:id])
+		
+		if @user.update_attributes(params[:user])
+    	flash[:notice] = 'Профиль был успешно сохранен.'
+	    redirect_to(edit_user_path)
+	
+	  else
+	  	render :action => "edit" 
+	  end
   end
 
 

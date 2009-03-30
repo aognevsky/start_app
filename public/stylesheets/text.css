@@ -16,6 +16,16 @@ a:focus {
 	outline: 1px dotted invert;
 }
 
+a {
+	color: #333;
+	border-bottom: 1px dotted #333;
+	text-decoration: none;
+}
+
+a:hover {
+	border-bottom: none;
+}
+
 hr {
 	border: 0 #ccc solid;
 	border-top-width: 1px;
@@ -67,7 +77,6 @@ li {
 
 p,
 dl,
-hr,
 h1,
 h2,
 h3,

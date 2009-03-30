@@ -1,25 +1,34 @@
 %h1= @user.login
 
-- form_for(@user) do |f|
+- form_for @user do |f|
+  = f.error_messages
   
   %p
     = label_tag 'name'
     %br
     = f.text_field :name
+    
+  %p
+    = label_tag 'icq'
+    %br
+    = f.text_field :icq
+
+  %hr
+
+  = submit_tag 'Сохранить'
+
+  
+- form_for @user, :html => { :multipart => true} do |f|
+  = f.error_messages
   
   %p
-    = submit_tag 'Сохранить'
+    = image_tag @user.userpic.url(:thumb)
     
-%hr
-
-- form_for @user, :html => { :multipart => true} do |f|
-  
   %p
     = label_tag 'userpic'
     %br
     = f.file_field :userpic
     
-
+  %hr
   
-  %p
-    = submit_tag 'Сохранить аватар'
+  = submit_tag 'Сохранить аватар'
