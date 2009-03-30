@@ -1,6 +1,9 @@
 - if logged_in?
   #user-bar
     = link_to_current_user :content_method => :login
+    = "/"
+    = "Settings"
+    = "/"
     = link_to 'Log out', logout_path
 
 - else

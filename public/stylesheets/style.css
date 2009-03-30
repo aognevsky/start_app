@@ -1,9 +1,34 @@
 .notice {
-	color: #CCFFCC;
+	color: #333;
 	font-size: 120%;
+
+	margin: 10px;
+	padding: 15px;
+	
+	background-color: #CCFFCC;
+	
+	width: 460px;
 }
 
 .error {
-	color: #FFCCCC;
+	color: #333;
 	font-size: 120%;
+
+	margin: 10px;
+	padding: 15px;
+	
+	background-color: #FFCCCC;
+	
+	width: 460px;
+}
+
+#user-bar {
+	position: absolute;
+	
+	top: 5px;
+	right: 5px;
+	
+	padding: 5px;
+	
+	background-color: #CCFFCC;
 }
