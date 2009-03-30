@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   
   # Paperclip
   has_attached_file :userpic,
-    :styles => {:thumb=> "100x100#"}
+    :styles => { :small => "100x100#", : }
   
   include Authentication
   include Authentication::ByPassword
