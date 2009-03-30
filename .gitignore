@@ -1,0 +1,7 @@
+tmp
+tmp/*
+log
+log/*.log
+log/*
+.gitignore~
+config/database.yml
