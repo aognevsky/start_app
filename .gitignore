@@ -5,3 +5,6 @@ log/*.log
 log/*
 .gitignore~
 config/database.yml
+public/.DS_Store
+.DS_Store
+db/schema.rb
