@@ -1,0 +1,9 @@
+- if logged_in?
+  #user-bar
+    = link_to_current_user :content_method => :login
+    = link_to 'Log out', logout_path
+
+- else
+  #user-bar
+    = link_to 'Log in', login_path
+    = link_to 'Sign up', signup_path

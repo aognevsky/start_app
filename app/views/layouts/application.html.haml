@@ -2,7 +2,7 @@
 %html{html_attrs}
 
   %head
-    
+    = stylesheet_link_tag :all
   %body
     - if flash[:notice]
       %p.notice= flash[:notice] 
